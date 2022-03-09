@@ -19,7 +19,7 @@ type StudyGroup = {
 };
 
 type SearchEventOptions = {
-    query: string | number,
+    query: (string | number),
     eventType: 'courses' | 'groups' 
 }
 
@@ -42,3 +42,13 @@ function searchEvents(args: SearchEventOptions){
         }
     })
 }
+
+let enrolledEvents: (string | number)[] = [];
+function enroll(event: Course | StudyGroup){
+
+}
+const searchResults = searchEvents({
+    query: 2,
+    eventType:'courses'
+});
+console.log(searchResults)
