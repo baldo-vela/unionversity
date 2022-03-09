@@ -33,7 +33,7 @@ function searchEvents(args: SearchEventOptions){
     // either a value of course or studyGroup, which are arrays of Course or StudyGroup objects, respectively.
     const events: (Course | StudyGroup)[] = args.eventType === 'courses' ? courses : studyGroups;
     // Reminder this is a union typed callback argument
-    events.filter((event: Course | StudyGroup) => {
+    return events.filter((event: Course | StudyGroup) => {
         if (typeof args.query === 'number') {
             return event.id === args.query;
         }
