@@ -1,3 +1,4 @@
+// Note how this object could easily be provided by an API or other actor.
 const courses = [
     {
       id: 1,
