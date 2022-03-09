@@ -29,5 +29,7 @@ type SearchEventOptions = {
  * @returns events that satisfy the query
  */
 function searchEvents(options: SearchEventOptions){
-    const events = options.eventType === 'courses' ? courses : studyGroups;
+    // Ye olde ternary operator
+    // either a value of course or studyGroup, which are arrays of Course or StudyGroup objects, respectively.
+    const events: (Course | StudyGroup)[] = options.eventType === 'courses' ? courses : studyGroups;
 }
