@@ -32,4 +32,7 @@ function searchEvents(options: SearchEventOptions){
     // Ye olde ternary operator
     // either a value of course or studyGroup, which are arrays of Course or StudyGroup objects, respectively.
     const events: (Course | StudyGroup)[] = options.eventType === 'courses' ? courses : studyGroups;
+    events.filter((event: Course | StudyGroup) => {
+
+    })
 }
