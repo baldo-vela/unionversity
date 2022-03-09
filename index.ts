@@ -34,6 +34,9 @@ function searchEvents(options: SearchEventOptions){
     const events: (Course | StudyGroup)[] = options.eventType === 'courses' ? courses : studyGroups;
     // Reminder this is a union typed callback argument
     events.filter((event: Course | StudyGroup) => {
-
+        if (typeof options.query === 'number') {
+            return event.id === options.query;
+        }
+        
     })
 }
