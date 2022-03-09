@@ -4,7 +4,7 @@ import studyGroups from "./studyGroups";
 
 type Course = {
     id: number,
-    courseId: number,
+    studyGroupId: number,
     title: string,
     keywords: string[],
     eventType: string
