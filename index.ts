@@ -18,6 +18,6 @@ type StudyGroup = {
     eventType: string
 };
 
-function searchEvents(){
-    
+function searchEvents(options){
+
 }
