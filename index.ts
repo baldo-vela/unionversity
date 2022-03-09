@@ -20,9 +20,14 @@ type StudyGroup = {
 
 type SearchEventOptions = {
     query: string | number,
-    eventType: string
+    eventType: Course | StudyGroup 
 }
 
-function searchEvents(options){
+/**
+ * Takes two numbers and returns their sum
+ * @param options of the type SearchEventOptions where query must either be a string or number, and eventType is either a Course or StudyGroup
+ * @returns events that satisfy the query
+ */
+function searchEvents(options: SearchEventOptions){
 
 }
