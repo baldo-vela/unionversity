@@ -18,6 +18,11 @@ type StudyGroup = {
     eventType: string
 };
 
+type SearchEventOptions = {
+    query: string | number,
+    eventType: string
+}
+
 function searchEvents(options){
 
 }
