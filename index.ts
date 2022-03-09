@@ -17,3 +17,7 @@ type StudyGroup = {
     keywords: string[],
     eventType: string
 };
+
+function searchEvents(){
+    
+}
