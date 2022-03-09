@@ -25,18 +25,20 @@ type SearchEventOptions = {
 
 /**
  * Takes two numbers and returns their sum
- * @param options of the type SearchEventOptions where query must either be a string or number, and eventType is either a Course or StudyGroup
+ * @param args of the type SearchEventOptions where query must either be a string or number, and eventType is either a Course or StudyGroup
  * @returns events that satisfy the query
  */
-function searchEvents(options: SearchEventOptions){
+function searchEvents(args: SearchEventOptions){
     // Ye olde ternary operator
     // either a value of course or studyGroup, which are arrays of Course or StudyGroup objects, respectively.
-    const events: (Course | StudyGroup)[] = options.eventType === 'courses' ? courses : studyGroups;
+    const events: (Course | StudyGroup)[] = args.eventType === 'courses' ? courses : studyGroups;
     // Reminder this is a union typed callback argument
     events.filter((event: Course | StudyGroup) => {
-        if (typeof options.query === 'number') {
-            return event.id === options.query;
+        if (typeof args.query === 'number') {
+            return event.id === args.query;
         }
-        
+        if (typeof args.query === 'string') {
+            return event.keywords.includes(args.query);
+        }
     })
 }
