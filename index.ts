@@ -20,7 +20,7 @@ type StudyGroup = {
 
 type SearchEventOptions = {
     query: string | number,
-    eventType: Course | StudyGroup 
+    eventType: 'courses' | 'groups' 
 }
 
 /**
@@ -29,5 +29,5 @@ type SearchEventOptions = {
  * @returns events that satisfy the query
  */
 function searchEvents(options: SearchEventOptions){
-
+    const events = options.eventType === 'courses' ? courses : studyGroups;
 }
