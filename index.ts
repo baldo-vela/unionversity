@@ -43,12 +43,18 @@ function searchEvents(args: SearchEventOptions){
     })
 }
 
-let enrolledEvents: (string | number)[] = [];
+let enrolledEvents: (Course | StudyGroup)[] = [];
+
 function enroll(event: Course | StudyGroup){
+    enrolledEvents = [...enrolledEvents, event]
 
 }
+
 const searchResults = searchEvents({
     query: 2,
     eventType:'courses'
 });
-console.log(searchResults)
+console.log(searchResults);
+
+enroll(searchResults[0]);
+console.log(enrolledEvents);
